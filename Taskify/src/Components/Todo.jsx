@@ -17,7 +17,7 @@ const Todo = () => {
 
     const fetchTasks = async () => {
         const res = await axios.get(
-            `http://localhost:5000/api/tasks/task/${boardId}`
+            `${import.meta.env.VITE_API_URL}/api/tasks/task/${boardId}`
         );
 
         const priorityOrder = { High: 1, Medium: 2, Low: 3 };
@@ -31,7 +31,7 @@ const Todo = () => {
 
     const deleteTask = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/tasks/${id}`);
+            await axios.delete(`${import.meta.env.VITE_API_URL}/api/tasks/${id}`);
             fetchTasks();
         } catch (error) {
             console.log("Delete error:", error);

@@ -19,7 +19,7 @@ const Dashboard = () => {
     const fetchBoards = async () => {
         try {
             const res = await axios.get(
-                `http://localhost:5000/api/boards/user/${user.id}`,
+                `${import.meta.env.VITE_API_URL}/api/boards/user/${user.id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`
@@ -40,7 +40,7 @@ const Dashboard = () => {
     const handleDeleteBoard = async (id) => {
         try {
             await axios.delete(
-                `http://localhost:5000/api/boards/${id}`,
+                `${import.meta.env.VITE_API_URL}/api/boards/${id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`

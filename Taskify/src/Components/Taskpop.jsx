@@ -22,7 +22,7 @@ const Taskpop = ({ boardId, fetchTasks, editTask, setEditTask }) => {
             if (editTask) {
                 // UPDATE
                 await axios.put(
-                    `http://localhost:5000/api/tasks/${editTask.id}`,
+                    `${import.meta.env.VITE_API_URL}/api/tasks/${editTask.id}`,
                     {
                         task_name: taskName,
                         description,
@@ -33,7 +33,7 @@ const Taskpop = ({ boardId, fetchTasks, editTask, setEditTask }) => {
                 );
             } else {
                 // CREATE
-                await axios.post("http://localhost:5000/api/tasks/create", {
+                await axios.post(`${import.meta.env.VITE_API_URL}/api/tasks/create`, {
                     board_id: boardId,
                     task_name: taskName,
                     description,
