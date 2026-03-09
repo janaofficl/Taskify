@@ -7,7 +7,7 @@ const boardRoutes = require("./routes/boardRoutes");
 const taskRoutes = require("./routes/taskRoutes");
 
 const app = express();
-const PORT=process.env.PORT;
+const PORT=process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -17,5 +17,5 @@ app.use("/api/boards", boardRoutes);
 app.use("/api/tasks", taskRoutes);
 
 app.listen(PORT, () => {
-    console.log("Server running on port 5000 🚀");
+    console.log(`Server running on port ${PORT} 🚀`);
 });

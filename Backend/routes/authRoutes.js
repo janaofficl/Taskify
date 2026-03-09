@@ -16,7 +16,13 @@ router.post("/register", async (req, res) => {
         if (result.length > 0) {
             return res.status(400).json({ message: "Email already exists" });
         }
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$/;
 
+        if (!passwordRegex.test(password)) {
+            return res.status(400).json({
+                message: "Password must contain upper, lower, number, special char (8-10 length)"
+            });
+        }
         const hashedPassword = await bcrypt.hash(password, 10);
 
         const sql = "INSERT INTO users(name,email,password) VALUES(?,?,?)";

@@ -20,6 +20,12 @@ const Signup = () => {
             return;
         }
         try {
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$/;
+
+            if (!passwordRegex.test(password)) {
+                setErrorMessage("Password must contain upper, lower, number, special char (8-10 length)");
+                return;
+            }
             const res = await axios.post(
                 "http://localhost:5000/api/auth/register",
                 {
@@ -34,7 +40,7 @@ const Signup = () => {
             navigate("/");
 
         } catch (error) {
-            alert(error.response?.data?.message || "Signup failed");
+            setErrorMessage(error.response?.data?.message || "Signup failed");
         }
     };
 
