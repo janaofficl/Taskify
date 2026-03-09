@@ -1,0 +1,768 @@
+.w-80{
+  width: 80%;
+}
+.w-85{
+  width: 85%;
+}
+.w-90{
+  width: 90%;
+}
+.w-30{
+  width: 30%;
+}
+.flex1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.layer{
+  padding: 20px;
+}
+.custom-shadow {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.opacity{
+    color: rgba(0,0,0,0.7);
+}
+.br-20{
+  border-radius: 20px;
+}
+.modal-dialog {
+    max-height: 100vh;
+    margin: 0 auto;
+}
+
+.modal-content {
+    max-height: 100vh;
+    overflow-y: auto;
+}
+.c-pointer{
+  cursor: pointer;
+}
+/* ============================= */
+/* BOARDS GRID CONTAINER */
+/* ============================= */
+
+.boards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  width: 100%;
+}
+
+
+/* ============================= */
+/* BOARD WRAPPER */
+/* ============================= */
+
+.board-wrapper {
+  width: 100%;
+}
+
+
+/* ============================= */
+/* MAIN BOARD CARD */
+/* ============================= */
+
+.board-card {
+  padding: 24px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #ffffff, #f8fbff);
+  border: 1px solid #e3e6ea;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 190px;
+
+  transition: all 0.3s ease;
+  
+}
+
+/* Hover Effect */
+.board-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+  border-color: #667eea;
+}
+
+
+/* ============================= */
+/* TITLE */
+/* ============================= */
+
+.board-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #222;
+  font-size: 20px;
+}
+
+
+/* ============================= */
+/* DESCRIPTION */
+/* ============================= */
+
+.board-description {
+  color: #6c757d;
+  margin-bottom: 16px;
+  min-height: 45px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+
+.board-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+
+/* ============================= */
+/* TASK BADGE */
+/* ============================= */
+
+.task-badge {
+  padding: 6px 16px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* ============================= */
+/* VIEW TEXT */
+/* ============================= */
+
+.view-text {
+  color: #4a63e7;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.view-text:hover {
+  color: #2c3dd8;
+}
+
+
+/* ============================= */
+/* RESPONSIVE - TABLET */
+/* ============================= */
+
+@media (max-width: 992px) {
+  .boards-container {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+  }
+
+  .board-card {
+    padding: 20px;
+    min-height: 180px;
+  }
+}
+
+
+/* ============================= */
+/* RESPONSIVE - MOBILE */
+/* ============================= */
+
+@media (max-width: 768px) {
+  .boards-container {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .board-card {
+    padding: 18px;
+    min-height: 170px;
+  }
+
+  .board-title {
+    font-size: 18px;
+  }
+
+  .board-description {
+    font-size: 14px;
+  }
+
+  .task-badge {
+    font-size: 13px;
+    padding: 5px 14px;
+  }
+
+  .view-text {
+    font-size: 13px;
+  }
+}
+
+
+/* ============================= */
+/* VERY SMALL MOBILE */
+/* ============================= */
+
+@media (max-width: 400px) {
+
+  .board-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .task-badge {
+    font-size: 12px;
+  }
+
+  .view-text {
+    font-size: 12px;
+  }
+}
+
+
+/* ============================= */
+/* TODO PAGE */
+/* ============================= */
+
+.todo-page {
+  min-height: 100vh;
+  background: linear-gradient(to right, #eef2f3, #dfe9f3);
+}
+
+.todo-container {
+  padding: 40px;
+}
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.todo-title {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.back-icon {
+  font-size: 22px;
+  cursor: pointer;
+  color: #667eea;
+  transition: 0.2s;
+}
+
+.back-icon:hover {
+  color: #4a63e7;
+}
+
+.create-task-btn {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+}
+
+/* ============================= */
+/* FILTER SECTION */
+/* ============================= */
+
+.todo-filter-section {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.todo-search {
+  max-width: 400px;
+}
+
+.todo-select {
+  max-width: 200px;
+}
+
+/* ============================= */
+/* COLUMNS */
+/* ============================= */
+
+.todo-columns {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.todo-column {
+  background: white;
+  border-radius: 18px;
+  padding: 20px;
+  border: 1px solid #e3e6ea;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  min-height: 400px;
+}
+
+.column-title {
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* ============================= */
+/* RESPONSIVE - TABLET */
+/* ============================= */
+
+@media (max-width: 992px) {
+
+  .todo-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+/* ============================= */
+/* RESPONSIVE - MOBILE */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  .todo-container {
+    padding: 20px;
+  }
+
+  .todo-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .todo-search {
+    max-width: 100%;
+  }
+
+  .todo-select {
+    max-width: 100%;
+  }
+
+}
+
+/* ============================= */
+/* SMALL MOBILE */
+/* ============================= */
+
+@media (max-width: 400px) {
+
+  .todo-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .create-task-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+}
+
+
+
+/* ===== MODAL WRAPPER ===== */
+.custom-modal {
+  max-width: 600px;
+  padding: 15px;
+}
+
+/* ===== MODAL CARD ===== */
+.task-modal {
+  border-radius: 20px;
+  border: none;
+  background: linear-gradient(135deg, #ffffff, #f8fbff);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* ===== HEADER ===== */
+.task-modal-header {
+  border-bottom: 1px solid #eef1f5;
+  padding: 20px 25px;
+}
+
+.task-modal-header .modal-title {
+  font-weight: 700;
+  font-size: 18px;
+  color: #222;
+}
+
+/* ===== BODY ===== */
+.task-modal-body {
+  padding: 25px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  color: #444;
+}
+
+/* ===== INPUTS ===== */
+.custom-input {
+  border-radius: 12px;
+  border: 1px solid #e3e6ea;
+  padding: 10px 14px;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.custom-input:focus {
+  border-color: #4facfe;
+  box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.15);
+}
+
+/* ===== FOOTER ===== */
+.task-modal-footer {
+  border-top: 1px solid #eef1f5;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Cancel Button */
+.cancel-btn {
+  border-radius: 10px;
+  padding: 8px 20px;
+}
+
+/* Save Button */
+.save-btn {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 10px;
+  padding: 8px 22px;
+  border: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.save-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+
+  .custom-modal {
+    max-width: 95%;
+  }
+
+  .task-modal-body {
+    padding: 18px;
+  }
+
+  .task-modal-footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .save-btn,
+  .cancel-btn {
+    width: 100%;
+  }
+}
+
+/* ===== TASK CARD ===== */
+
+.task-wrapper {
+  margin-bottom: 18px;
+  width: 100%;
+}
+
+.task-card {
+  width: 100%;
+  padding: 18px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #e9edf3;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  border-color: #4facfe;
+}
+
+/* Header */
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.task-title {
+  font-weight: 700;
+  font-size: 15px;
+  margin: 0;
+  color: #222;
+}
+
+/* Description */
+.task-description {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 14px;
+  min-height: 35px;
+}
+
+/* Footer */
+.task-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-date {
+  font-size: 13px;
+  color: #555;
+}
+
+/* Priority Badge */
+.priority-badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.priority-badge.high {
+  background: rgba(255, 77, 79, 0.15);
+  color: #ff4d4f;
+}
+
+.priority-badge.medium {
+  background: rgba(255, 159, 67, 0.18);
+  color: #ff9f43;
+}
+
+.priority-badge.low {
+  background: rgba(40, 199, 111, 0.15);
+  color: #28c76f;
+}
+
+/* Icons */
+.task-actions {
+  display: flex;
+  gap: 14px;
+}
+
+.edit-icon {
+  color: #0d6efd;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.edit-icon:hover {
+  transform: scale(1.15);
+}
+
+.delete-icon {
+  color: #ff4d4f;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.delete-icon:hover {
+  transform: scale(1.15);
+}
+
+/* No Task Text */
+.no-task-text {
+  color: #999;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+
+  .task-card {
+    padding: 14px;
+  }
+
+  .task-title {
+    font-size: 14px;
+  }
+
+  .task-description {
+    font-size: 13px;
+  }
+
+  .task-date {
+    font-size: 12px;
+  }
+}
+
+
+/* ===== LOGIN PAGE ===== */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 20px;
+}
+
+/* Card */
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Brand */
+.login-brand {
+  font-size: 32px;
+  font-weight: 800;
+  text-align: center;
+  color: #667eea;
+  margin-bottom: 10px;
+}
+
+/* Subtitle */
+.login-subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 25px;
+}
+
+/* Title */
+.login-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+/* Form */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  color: #444;
+}
+
+/* Inputs */
+.custom-input {
+  border-radius: 12px;
+  border: 1px solid #e3e6ea;
+  padding: 10px 14px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+/* Button */
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: #fff;
+  transition: 0.3s ease;
+  margin-top: 10px;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+/* Footer */
+.login-footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.register-link {
+  margin-left: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #667eea;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 480px) {
+
+  .login-card {
+    padding: 25px;
+    border-radius: 16px;
+  }
+
+  .login-brand {
+    font-size: 26px;
+  }
+
+  .login-title {
+    font-size: 18px;
+  }
+}
