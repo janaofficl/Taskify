@@ -11,9 +11,7 @@ const PORT=process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://taskify.vercel.app"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true
+    origin:"*"
   })
 );
 
